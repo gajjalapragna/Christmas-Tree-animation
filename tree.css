@@ -1,0 +1,118 @@
+:root{
+    --bg: #000;         /* Pure black background */
+    --gold: #ffd700;
+    --red:  #ff5a5a;
+    --blue: #64a8ff;
+    --green:#6bff7b;
+    --white:#ffffff;
+  }
+
+  /* Page */
+  html, body {
+    height: 100%;
+    margin: 0;
+    background: var(--bg);
+    display: grid;
+    place-items: center;
+    color: #fff;
+    font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  }
+
+  /* 3D scene */
+  .scene {
+    position: relative;
+    width: min(420px, 90vw);
+    height: min(560px, 95vh);
+    perspective: 35em;            /* 3D perspective */
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+  }
+
+  /* Tree wrapper rotates in 3D */
+  .tree {
+    position: relative;
+    transform-style: preserve-3d;
+    animation: spin 12s linear infinite;   /* rotating tree */
+  }
+  @keyframes spin {
+    to { transform: rotateY(360deg); }
+  }
+
+  /* Rows of lights forming the tree silhouette */
+  .row {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    line-height: 1;
+    margin: 8px 0;
+    transform-style: preserve-3d;
+    /* subtle depth tilt (optional) */
+    transform: rotateX(6deg);
+  }
+
+  /* Each light is just a star character "*" */
+  .light {
+    font-size: 18px;
+    text-shadow:
+      0 0 4px currentColor,
+      0 0 10px currentColor,
+      0 0 16px currentColor;
+    opacity: 0.85;
+    animation: twinkle 2.4s ease-in-out infinite;
+    animation-delay: calc(var(--d, 0) * 0.2s); /* staggered delays */
+  }
+  @keyframes twinkle {
+    0%, 100% { filter: brightness(1); opacity: 0.85; }
+    50%      { filter: brightness(2); opacity: 1; }
+  }
+
+  /* Color helpers */
+  .gold { color: var(--gold); }
+  .red  { color: var(--red); }
+  .blue { color: var(--blue); }
+  .green{ color: var(--green); }
+  .white{ color: var(--white); }
+
+  /* Trunk (simple block, optional) */
+  .trunk {
+    width: 26px;
+    height: 42px;
+    background: #5b3a1f;
+    margin: 10px auto 0;
+    border-radius: 6px;
+    box-shadow: inset 0 0 12px rgba(0,0,0,0.5);
+  }
+
+  /* Top star: rises from bottom and stays */
+  .top-star {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%) translateY(220px);
+    font-size: 28px;
+    color: var(--gold);
+    text-shadow:
+      0 0 6px #ffd700,
+      0 0 18px #ffd700,
+      0 0 28px #ffd700;
+    animation: rise 3s cubic-bezier(.2,.8,.2,1) forwards, twinkle 2.6s ease-in-out infinite 3s;
+    z-index: 2;
+  }
+  @keyframes rise {
+    0%   { transform: translateX(-50%) translateY(220px) scale(0.6) rotateY(20deg); opacity: 0; }
+    20%  { opacity: 1; }
+    80%  { transform: translateX(-50%) translateY(-240px) scale(1.08) rotateY(0deg); }
+    100% { transform: translateX(-50%) translateY(-250px) scale(1) rotateY(0deg); }
+  }
+
+  /* Optional faint ground ellipse for context (still black scene) */
+  .ground {
+    position: absolute;
+    bottom: -28px;
+    width: 420px;
+    height: 120px;
+    border-radius: 50%;
+    background: radial-gradient(closest-side, #0a0a0a 0%, #000 70%);
+    filter: blur(2px);
+    opacity: 0.8;
+  }

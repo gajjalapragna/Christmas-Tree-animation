@@ -1,0 +1,111 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>3D Tree of Twinkling Stars</title>
+<link rel="stylesheet" href="tree.css">
+</head>
+<body>
+  <div class="scene">
+    <!-- Rising top star -->
+    <div class="top-star">*</div>
+
+    <!-- Rotating tree made of twinkling '*' lights -->
+    <div class="tree" aria-label="3D rotating tree of light stars">
+      <!-- Narrow tip to wide base: just rows of '*' -->
+      <div class="row">
+        <span class="light gold" style="--d:0">*</span>
+      </div>
+
+      <div class="row">
+        <span class="light red"   style="--d:0.1">*</span>
+        <span class="light blue"  style="--d:0.3">*</span>
+      </div>
+
+      <div class="row">
+        <span class="light green" style="--d:0.2">*</span>
+        <span class="light gold"  style="--d:0.4">*</span>
+        <span class="light red"   style="--d:0.1">*</span>
+      </div>
+
+      <div class="row">
+        <span class="light blue"  style="--d:0.5">*</span>
+        <span class="light green" style="--d:0.3">*</span>
+        <span class="light gold"  style="--d:0.6">*</span>
+        <span class="light red"   style="--d:0.2">*</span>
+      </div>
+
+      <div class="row">
+        <span class="light green" style="--d:0.7">*</span>
+        <span class="light blue"  style="--d:0.2">*</span>
+        <span class="light red"   style="--d:0.4">*</span>
+        <span class="light gold"  style="--d:0.6">*</span>
+        <span class="light blue"  style="--d:0.1">*</span>
+      </div>
+
+      <div class="row">
+        <span class="light gold"  style="--d:0.3">*</span>
+        <span class="light red"   style="--d:0.8">*</span>
+        <span class="light blue"  style="--d:0.5">*</span>
+        <span class="light green" style="--d:0.2">*</span>
+        <span class="light white" style="--d:0.6">*</span>
+        <span class="light red"   style="--d:0.1">*</span>
+      </div>
+
+      <div class="row">
+        <span class="light blue"  style="--d:0.7">*</span>
+        <span class="light gold"  style="--d:0.4">*</span>
+        <span class="light red"   style="--d:0.2">*</span>
+        <span class="light green" style="--d:0.9">*</span>
+        <span class="light blue"  style="--d:0.3">*</span>
+        <span class="light white" style="--d:0.5">*</span>
+        <span class="light red"   style="--d:0.1">*</span>
+      </div>
+
+      <div class="row">
+        <span class="light gold"  style="--d:0.2">*</span>
+        <span class="light blue"  style="--d:0.6">*</span>
+        <span class="light green" style="--d:0.4">*</span>
+        <span class="light red"   style="--d:0.1">*</span>
+        <span class="light white" style="--d:0.7">*</span>
+        <span class="light gold"  style="--d:0.3">*</span>
+        <span class="light blue"  style="--d:0.9">*</span>
+        <span class="light red"   style="--d:0.5">*</span>
+      </div>
+
+      <div class="row">
+        <span class="light green" style="--d:0.2">*</span>
+        <span class="light red"   style="--d:0.4">*</span>
+        <span class="light gold"  style="--d:0.1">*</span>
+        <span class="light blue"  style="--d:0.6">*</span>
+        <span class="light white" style="--d:0.8">*</span>
+        <span class="light red"   style="--d:0.3">*</span>
+        <span class="light blue"  style="--d:0.7">*</span>
+        <span class="light gold"  style="--d:0.5">*</span>
+        <span class="light green" style="--d:0.9">*</span>
+      </div>
+
+      <div class="row">
+        <span class="light white" style="--d:0.2">*</span>
+        <span class="light blue"  style="--d:0.5">*</span>
+        <span class="light red"   style="--d:0.1">*</span>
+        <span class="light gold"  style="--d:0.3">*</span>
+        <span class="light green" style="--d:0.7">*</span>
+        <span class="light white" style="--d:0.6">*</span>
+        <span class="light blue"  style="--d:0.4">*</span>
+        <span class="light red"   style="--d:0.8">*</span>
+        <span class="light gold"  style="--d:0.9">*</span>
+        <span class="light green" style="--d:0.2">*</span>
+      </div>
+
+      <!-- Trunk -->
+      <div class="trunk"></div>
+    </div>
+
+    <!-- Optional ground (kept dark) -->
+    <div class="ground" aria-hidden="true"></div>
+  </div>
+</body>
+</html>
